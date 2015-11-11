@@ -1,0 +1,43 @@
+extends layout
+
+block content
+	h1 Póstarnir
+
+	if !posts
+		p Engir póstar
+	else
+		table(class='table')
+			thead
+				tr
+					td Titill
+					td Efni
+					td Höfundur
+					td Skrifað
+			tbody
+				each post in posts
+					tr
+						td= post.title
+						td= post.content
+						td= post.author
+						td= post.date
+						td 
+							if post.author == user
+								form(name='delete'
+									action='/posts/delete/?id='+post.id
+									method='post')
+									button(class='btn btn-default') Eyða
+
+			tfoot
+
+	form(name='post', action='/posts', method='post')
+		div(class='form-group')
+			label(for='title')
+				| Titill:
+				input(type='text', name='title', class='form-control')
+
+		div(class='form-group')
+			label(for='content')
+				| Efni:
+				textarea(type='text', name='content', class='form-control')
+
+		button(class='btn btn-default') Senda

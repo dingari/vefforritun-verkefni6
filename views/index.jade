@@ -1,0 +1,26 @@
+extends layout
+
+block content
+	h1= title
+
+	if message
+		h4= message
+
+	if user
+		h3= 'Innskráður er: ' + user
+
+	ul
+		if user
+			li
+				a(href='/posts')
+					h4 Skoða vegg
+			li
+				a(href='/logout') 
+					h4 Útskráning
+		else
+			li
+				a(href='/login') 
+					h4 Innskráning
+			li
+				a(href='/signup') 
+					h4 Nýskráning

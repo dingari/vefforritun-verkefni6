@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	h1 Innskráning
+
+	p= message
+
+	form(name='login', action='/login', method='post')
+		div(class='form-group')
+			label
+				| Notandanafn:
+				input(type='text', name='username', class='form-control', value=username)
+
+		div(class='form-group')
+			label
+				| Lykilorð:
+				input(type='password', name='password', class='form-control')
+
+		div(class='form-group')
+			button(class='btn btn-default') Senda
+			a(href='/signup' class='btn') Nýskráning
