@@ -8,7 +8,31 @@ html
 	body
 		div(class='container')
 			div(class='container-fluid')
-				block content
+				if sidebar
+					h1= title
+					hr
+
+					div(class='col-md-2	')
+						ul
+							li
+								a(href='/')
+									h4 Heim
+							if user
+								li
+									a(href='/posts')
+										h4 Skoða vegg
+								li
+									a(href='/logout') 
+										h4 Útskráning
+							else
+								li
+									a(href='/login') 
+										h4 Innskráning
+								li
+									a(href='/signup') 
+										h4 Nýskráning
+				div(class='col-md-10')
+					block content
 
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
 		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')

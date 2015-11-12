@@ -1,26 +1,14 @@
 extends layout
 
 block content
-	h1= title
+	h2 Velkomin á síðuna
 
 	if message
 		h4= message
 
 	if user
-		h3= 'Innskráður er: ' + user
+		h4= 'Innskráður er: ' + user
+	else
+		h4 Vinsamlegast skráðu þig inn
 
-	ul
-		if user
-			li
-				a(href='/posts')
-					h4 Skoða vegg
-			li
-				a(href='/logout') 
-					h4 Útskráning
-		else
-			li
-				a(href='/login') 
-					h4 Innskráning
-			li
-				a(href='/signup') 
-					h4 Nýskráning
+	

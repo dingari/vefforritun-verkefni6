@@ -1,7 +1,6 @@
 extends layout
 
 block content
-	h1 Póstarnir
 
 	if !posts
 		p Engir póstar
@@ -29,6 +28,7 @@ block content
 
 			tfoot
 
+	hr
 	form(name='post', action='/posts', method='post')
 		div(class='form-group')
 			label(for='title')

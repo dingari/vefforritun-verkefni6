@@ -11,6 +11,6 @@ CREATE TABLE posts
 	ID SERIAL, 
 	title TEXT, 
 	content TEXT, 
-	author INT REFERENCES users(username), 
+	author TEXT REFERENCES users(username), 
 	date TIMESTAMP WITH TIME ZONE
 );

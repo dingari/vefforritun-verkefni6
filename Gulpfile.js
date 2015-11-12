@@ -4,10 +4,6 @@ var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 var jshint 		= require('gulp-jshint');
 var nodemon     = require('gulp-nodemon');
-var gutil       = require('./node_modules/gulp/node_modules/gulp-util');
-var chalk       = require('./node_modules/gulp/node_modules/chalk');
-var mocha       = require('gulp-mocha');
-
 
 gulp.task('serve', ['nodemon']);
 
@@ -18,8 +14,6 @@ gulp.task('browser-sync', ['nodemon'], function() {
         proxy : 'http://localhost:4000',
         port : port
     });
-
-    console.log('Starting browser-sync on port', port);
 
     gulp.watch('./views/*.jade').on('change', browserSync.reload);
     //gulp.watch('js/*.js').on('change', browserSync.reload);
