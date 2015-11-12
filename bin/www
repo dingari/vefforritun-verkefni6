@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+require('dotenv').load();
 
 /**
  * Module dependencies.
@@ -7,7 +8,6 @@
 var app = require('../app');
 var debug = require('debug')('app:server');
 var http = require('http');
-require('dotenv').load();
 
 /**
  * Get port from environment and store in Express.
